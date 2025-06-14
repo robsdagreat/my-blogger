@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # my-blogger
 
 This project was created with [Better-T-Stack](https://github.com/AmanVarshney01/create-better-t-stack), a modern TypeScript stack that combines Next.js, Next, ORPC, and more.
@@ -66,3 +67,6 @@ my-blogger/
 - `bun check-types`: Check TypeScript types across all apps
 - `bun db:push`: Push schema changes to database
 - `bun db:studio`: Open database studio UI
+=======
+# my-blogger
+>>>>>>> 42bc0a122d18f3c9978d8a85b0d981e94814da38
