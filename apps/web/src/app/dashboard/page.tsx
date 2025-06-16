@@ -1,31 +1,17 @@
-"use client"
-import { authClient } from "@/lib/auth-client";
-import { useQuery } from "@tanstack/react-query";
-import { orpc } from "@/utils/orpc";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { redirect } from "next/navigation";
 
-export default function Dashboard() {
-  const router = useRouter();
-  const { data: session, isPending } = authClient.useSession();
-
-  const privateData = useQuery(orpc.privateData.queryOptions());
-
-  useEffect(() => {
-    if (!session && !isPending) {
-      router.push("/login");
-    }
-  }, [session, isPending]);
-
-  if (isPending) {
-    return <div>Loading...</div>;
-  }
-
+export default async function DashboardPage() {
+  // TODO: Replace with Better Auth session check
+  // For now, just render the dashboard
   return (
-    <div>
-      <h1>Dashboard</h1>
-      <p>Welcome {session?.user.name}</p>
-      <p>privateData: {privateData.data?.message}</p>
+    <div className="container mx-auto py-10">
+      <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
+      <div className="bg-white shadow rounded-lg p-6">
+        <h2 className="text-xl font-semibold mb-2">
+          Welcome!
+        </h2>
+        <p className="text-gray-600">Email: (user email here)</p>
+      </div>
     </div>
   );
 }
