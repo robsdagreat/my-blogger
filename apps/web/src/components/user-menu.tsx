@@ -41,14 +41,10 @@ export default function UserMenu() {
           <Button
             variant="destructive"
             className="w-full"
-            onClick={() => {
-              authClient.signOut({
-                fetchOptions: {
-                  onSuccess: () => {
-                    router.push("/");
-                  },
-                },
-              });
+            onClick={async () => {
+              await fetch("/api/auth/logout");
+              router.push("/login");
+              router.refresh();
             }}
           >
             Sign Out

@@ -20,7 +20,19 @@ export const auth = betterAuth({
     enabled: true,
     passwordMinLength: 6,
     passwordMaxLength: 100
-  }
+  },
+  advanced: {
+    cookies: {
+      session_token: {
+        name: "better-auth.session_token",
+        attributes: {
+          path: "/",
+          httpOnly: true,
+          secure: process.env.NODE_ENV === "production",
+        },
+      },
+    },
+  },
 });
 
 

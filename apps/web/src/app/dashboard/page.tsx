@@ -1,17 +1,18 @@
-import { redirect } from "next/navigation";
+import { DashboardLayout } from '@/components/dashboard/dashboard-layout';
 
-export default async function DashboardPage() {
-  // TODO: Replace with Better Auth session check
-  // For now, just render the dashboard
+export const metadata = {
+  title: 'Dashboard - Analytics',
+  description: 'Dashboard analytics for your blog',
+};
+
+export default function DashboardAnalyticsPage() {
   return (
-    <div className="container mx-auto py-10">
-      <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
-      <div className="bg-white shadow rounded-lg p-6">
-        <h2 className="text-xl font-semibold mb-2">
-          Welcome!
-        </h2>
-        <p className="text-gray-600">Email: (user email here)</p>
+    <DashboardLayout>
+      <h1 className="text-3xl font-bold mb-8">Analytics Overview</h1>
+      <div className="bg-white p-6 rounded-lg shadow-md">
+        <p>This is where your dashboard analytics will be displayed.</p>
+        <p>Coming soon: charts for posts per category, recent activity, etc.</p>
       </div>
-    </div>
+    </DashboardLayout>
   );
 }
